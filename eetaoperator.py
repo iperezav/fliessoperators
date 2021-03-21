@@ -50,6 +50,8 @@ def getalletas(m,J):
 #        print(j)
 
 # generate all eeta functions for all words previously generated
+# it is a list of lists where each one contains Eetas for all words of a fixed size
+# [[Eetas words of size one],[Eetas words of size two],[Eetas words of size three],...]
 def Eetafliess(J,t0):
     m=len(u(t))-1
     Eetafliesstmp=[]
@@ -58,4 +60,24 @@ def Eetafliess(J,t0):
     return Eetafliesstmp
    
 # check    
-Eetafliess(2,0)
+# Eetafliess(2,0)
+
+# writes Eetafliess as only one list: [Eetas words of size one,Eetas words of size two,...]
+def Eetafliessv(J,t0):
+    Eetafliessvtmp=[]
+    for i in Eetafliess(J,t0):
+        for j in i:   
+            Eetafliessvtmp.append(j)
+    return Eetafliessvtmp
+
+# example
+v=Eetafliessv(2,0)
+
+# evaluates Eetafliessv at a final point tf
+def Eetafeval(v,tf):
+    Eetafevaltmp=[]
+    for i in v:
+        Eetafevaltmp.append(i.subs({t:tf}).evalf())
+    return Eetafevaltmp
+        
+print(Eetafeval(v,1))
