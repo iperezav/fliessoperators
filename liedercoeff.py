@@ -1,6 +1,17 @@
+## Python 3
+## Code to obtain symbolic (c,eta)
+## dot{z(t)}=g_0(z(t))+sum_{i=1}^{m}g_i(z(t))u_i(t)
+## y(t)=h(z(t))
+## z0\in \mathbb{R} (1-dimensional)
+## (c,eta)=L_{g_{eta}}h(z)
+## where L_{g_i}h(z)=diff(h(z),z,1)*g_i(z)
+
+## Libraries
+
 import math
 import itertools
 from sympy import *
+
 z = Symbol('z')
 
 def g(z):
