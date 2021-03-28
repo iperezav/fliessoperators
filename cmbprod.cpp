@@ -17,7 +17,7 @@ class meta{
     endrowi1=accwrdssizei;
     
     for (int j=startrowi;j<endrowi1;j++){
-      for (int ccol=J;ccol>=J;ccol--){
+      for (int ccol=J;ccol>J-sizeword;ccol--){
         arrmeta[j][ccol]=;
         
       }
