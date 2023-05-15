@@ -1,0 +1,32 @@
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+vector<int> cumulativeSum(const vector<int>& nums) {
+    int size = nums.size();
+    vector<int> result(size);
+
+    int sum = 0;
+    for (int i = 0; i < size; i++) {
+        sum += nums[i];
+        result[i] = sum;
+    }
+
+    return result;
+}
+
+int main() {
+    // Sample input list
+    vector<int> numbers = {2, 4, 6, 8, 10};
+
+    // Calculate cumulative sums
+    vector<int> sums = cumulativeSum(numbers);
+
+    // Print the cumulative sums
+    for (int i = 0; i < sums.size(); i++) {
+        cout << "Cumulative sum until index " << i + 1 << ": " << sums[i] << endl;
+    }
+
+    return 0;
+}
