@@ -1,0 +1,32 @@
+#include <iostream>
+#include <fstream>
+#include <vector>
+
+using namespace std;
+
+void generatePermutations(int N, int k, vector<int>& permutation, ofstream& outfile) {
+    if (N == 0) {
+        // Write the permutation to file
+        for (int i = 0; i < permutation.size(); i++) {
+            outfile << permutation[i] << " ";
+        }
+        outfile << endl;
+        return;
+    }
+
+    for (int i = 1; i <= k; i++) {
+        permutation.push_back(i);
+        generatePermutations(N - 1, k, permutation, outfile);
+        permutation.pop_back();
+    }
+}
+
+int main() {
+    int N = 3; // Size of permutation
+    int k = 4; // Maximum number
+    vector<int> permutation;
+    ofstream outfile("permutations.txt");
+    generatePermutations(N, k, permutation, outfile);
+    outfile.close();
+    return 0;
+}
