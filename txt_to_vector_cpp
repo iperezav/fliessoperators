@@ -1,0 +1,23 @@
+#include <iostream>
+#include <fstream>
+#include <vector>
+
+int main() {
+    std::ifstream infile("numbers.txt"); // Open the input file
+    std::vector<int> numbers; // Vector to store the numbers
+    int num;
+
+    while (infile >> num) {
+        numbers.push_back(num); // Add each number to the vector
+    }
+
+    infile.close(); // Close the input file
+
+    // Print the numbers
+    for (int i = 0; i < numbers.size(); i++) {
+        std::cout << numbers[i] << " ";
+    }
+    std::cout << std::endl;
+
+    return 0;
+}
